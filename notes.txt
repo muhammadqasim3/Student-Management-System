@@ -1,0 +1,9 @@
+* Infyom Generator with AdminLTE theme
+    - https://labs.infyom.com/laravelgenerator/docs/7.0/publish-layout
+
+* Migrations
+    - php artisan make:migration create_admissions_table --create=admissions
+    - php artisan make:migration create_teachers_table --create=teachers
+    - php artisan make:migration create_roles_table --create=roles
+
+
