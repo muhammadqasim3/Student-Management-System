@@ -5,5 +5,5 @@
     - php artisan make:migration create_admissions_table --create=admissions
     - php artisan make:migration create_teachers_table --create=teachers
     - php artisan make:migration create_roles_table --create=roles
-
+    - php artisan make:migration create_role_user_table --create=role_user
 
