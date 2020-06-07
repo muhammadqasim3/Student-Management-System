@@ -6,4 +6,18 @@
     - php artisan make:migration create_teachers_table --create=teachers
     - php artisan make:migration create_roles_table --create=roles
     - php artisan make:migration create_role_user_table --create=role_user
-
+    Tables
+        - php artisan make:migration create_classes_table --create=classes
+        - php artisan make:migration create_classrooms_table --create=classrooms
+        - php artisan make:migration create_levels_table --create=levels
+        - php artisan make:migration create_batches_table --create=batches
+        - php artisan make:migration create_shifts_table --create=shifts
+        - php artisan make:migration create_courses_table --create=courses
+        - php artisan make:migration create_faculties_table --create=faculties
+        - php artisan make:migration create_times_table --create=times
+        - php artisan make:migration create_attendances_table --create=attendances
+        - php artisan make:migration create_academics_table --create=academics
+        - php artisan make:migration create_days_table --create=days
+        - php artisan make:migration create_class_assignings_table --create=class_assignings
+        - php artisan make:migration create_class_schedulings_table --create=class_schedulings
+        - php artisan make:migration create_transactions_table --create=transactions
