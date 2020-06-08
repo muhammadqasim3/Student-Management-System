@@ -29,3 +29,33 @@ Route::get('/home', 'HomeController@index')->middleware('verified');
 Auth::routes(['verify' => true]);
 
 Route::get('/home', 'HomeController@index')->middleware('verified');
+
+Route::resource('classes', 'ClassesController');
+
+Route::resource('adminClassrooms', 'AdminClassroomController');
+
+Route::resource('classrooms', 'ClassroomController');
+
+Route::resource('levels', 'LevelController');
+
+Route::resource('batches', 'BatchController');
+
+Route::resource('shifts', 'ShiftController');
+
+Route::resource('courses', 'CourseController');
+
+Route::resource('faculties', 'FacultyController');
+
+Route::resource('times', 'TimeController');
+
+Route::resource('attendances', 'AttendanceController');
+
+Route::resource('academics', 'AcademicController');
+
+Route::resource('days', 'DayController');
+
+Route::resource('classAssignings', 'ClassAssigningController');
+
+Route::resource('classSchedulings', 'ClassSchedulingController');
+
+Route::resource('transactions', 'TransactionController');
