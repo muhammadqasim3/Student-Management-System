@@ -57,3 +57,10 @@ Route::resource('classAssignings', 'ClassAssigningController');
 Route::resource('classSchedulings', 'ClassSchedulingController');
 
 Route::resource('transactions', 'TransactionController');
+
+
+Route::resource('roles', 'RoleController');
+
+Route::resource('users', 'UserController');
+
+Route::resource('admissions', 'AdmissionController');

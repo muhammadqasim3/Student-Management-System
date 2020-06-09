@@ -41,3 +41,6 @@
     - php artisan infyom:scaffold ClassAssigning --fromTable --tableName=class_assignings
     - php artisan infyom:scaffold ClassScheduling --fromTable --tableName=class_schedulings
     - php artisan infyom:scaffold Transaction --fromTable --tableName=transactions
+    - php artisan infyom:scaffold Role --fromTable --tableName=roles
+    - php artisan infyom:scaffold User --fromTable --tableName=users
+    - php artisan infyom:scaffold Admission --fromTable --tableName=admissions
