@@ -32,8 +32,6 @@ Route::get('/home', 'HomeController@index')->middleware('verified');
 
 Route::resource('classes', 'ClassesController');
 
-Route::resource('adminClassrooms', 'AdminClassroomController');
-
 Route::resource('classrooms', 'ClassroomController');
 
 Route::resource('levels', 'LevelController');
