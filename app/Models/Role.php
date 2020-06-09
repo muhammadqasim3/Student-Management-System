@@ -15,7 +15,7 @@ class Role extends Model
 {
 
     public $table = 'roles';
-    
+
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
 
@@ -23,7 +23,8 @@ class Role extends Model
 
 
     public $fillable = [
-        'name'
+        'name',
+        'description'
     ];
 
     /**
@@ -33,7 +34,8 @@ class Role extends Model
      */
     protected $casts = [
         'id' => 'integer',
-        'name' => 'string'
+        'name' => 'string',
+        'description' => 'text'
     ];
 
     /**
@@ -42,8 +44,9 @@ class Role extends Model
      * @var array
      */
     public static $rules = [
-        'name' => 'required'
+        'name' => 'required',
+        'description' => 'sometimes'
     ];
 
-    
+
 }
