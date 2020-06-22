@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model as Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * Class Level
@@ -15,9 +16,9 @@ use Illuminate\Database\Eloquent\Model as Model;
  */
 class Level extends Model
 {
-
+    use SoftDeletes;
     public $table = 'levels';
-    
+
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
 
@@ -53,5 +54,5 @@ class Level extends Model
         'description' => 'required'
     ];
 
-    
+
 }

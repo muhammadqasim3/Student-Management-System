@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model as Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * Class Classes
@@ -14,9 +15,9 @@ use Illuminate\Database\Eloquent\Model as Model;
  */
 class Classes extends Model
 {
-
+    use SoftDeletes;
     public $table = 'classes';
-    
+
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
 
@@ -49,5 +50,5 @@ class Classes extends Model
         'code' => 'required'
     ];
 
-    
+
 }

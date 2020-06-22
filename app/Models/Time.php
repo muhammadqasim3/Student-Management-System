@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model as Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * Class Time
@@ -13,9 +14,9 @@ use Illuminate\Database\Eloquent\Model as Model;
  */
 class Time extends Model
 {
-
+    use SoftDeletes;
     public $table = 'times';
-    
+
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
 
@@ -45,5 +46,5 @@ class Time extends Model
         'time' => 'required'
     ];
 
-    
+
 }
