@@ -18,11 +18,22 @@ class Course extends Model
 {
 
     public $table = 'courses';
-    
+
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
 
+    const STATUS_ACTIVE = 1;
+    const STATUS_INACTIVE = 0;
 
+    public static $CourseStatus = [
+        self::STATUS_ACTIVE => "Active",
+        self::STATUS_INACTIVE => "Inactive"
+    ];
+
+    public static $CourseStatusCssColor = [
+        self::STATUS_ACTIVE => "success",
+        self::STATUS_INACTIVE => "danger"
+    ];
 
 
     public $fillable = [
@@ -30,6 +41,10 @@ class Course extends Model
         'code',
         'description',
         'status'
+    ];
+
+    protected $appends = [
+      'course_status_css'
     ];
 
     /**
@@ -57,5 +72,9 @@ class Course extends Model
         'status' => 'required'
     ];
 
-    
+    public function getCourseStatusCssAttribute() {
+        return '<span class="label label-' . self::$CourseStatusCssColor[$this->status] . '">' . ucwords(str_replace('_', ' ',
+            self::$CourseStatus[$this->status])) . '</span>';
+    }
+
 }

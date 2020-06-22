@@ -19,6 +19,6 @@
 <!-- Status Field -->
 <div class="form-group">
     {!! Form::label('status', 'Status:') !!}
-    <p>{{ $course->status }}</p>
+    <p>{!! $course->course_status_css !!}</p>
 </div>
 

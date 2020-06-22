@@ -23,8 +23,8 @@
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/css/bootstrap-datetimepicker.min.css">
-
-    @yield('css')
+    <link rel="stylesheet" href="{{ asset('/css/custom.css') }}">
+    @stack('css')
 </head>
 
 <body class="skin-yellow sidebar-mini">

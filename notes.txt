@@ -44,3 +44,7 @@
     - php artisan infyom:scaffold Role --fromTable --tableName=roles
     - php artisan infyom:scaffold User --fromTable --tableName=users
     - php artisan infyom:scaffold Admission --fromTable --tableName=admissions
+
+* Adding custom.css file
+    - public/css/custom.css
+    - app.js  <link rel="stylesheet" href="{{ asset('/css/custom.css') }}">

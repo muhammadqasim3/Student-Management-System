@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CreateCourseRequest;
 use App\Http\Requests\UpdateCourseRequest;
+use App\Models\Course;
 use App\Repositories\CourseRepository;
 use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
@@ -42,7 +43,8 @@ class CourseController extends AppBaseController
      */
     public function create()
     {
-        return view('courses.create');
+        $status = Course::$CourseStatus;
+        return view('courses.create')->with(['status' => $status]);
     }
 
     /**
@@ -93,14 +95,15 @@ class CourseController extends AppBaseController
     public function edit($id)
     {
         $course = $this->courseRepository->find($id);
-
+        $status = Course::$CourseStatus;
+//        dd($status, $course);
         if (empty($course)) {
             Flash::error('Course not found');
 
             return redirect(route('courses.index'));
         }
 
-        return view('courses.edit')->with('course', $course);
+        return view('courses.edit')->with(['course' => $course, 'status' => $status]);
     }
 
     /**

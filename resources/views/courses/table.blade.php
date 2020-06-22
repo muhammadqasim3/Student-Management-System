@@ -1,4 +1,12 @@
-<div class="table-responsive">
+{{--@push('css')--}}
+{{--    <style>--}}
+{{--        .bold-fonts{--}}
+{{--            font-weight: bold;--}}
+{{--        }--}}
+{{--    </style>--}}
+{{--@endpush--}}
+
+<div class="table-responsive" style="">
     <table class="table" id="courses-table">
         <thead>
             <tr>
@@ -15,13 +23,19 @@
                 <td>{{ $course->name }}</td>
             <td>{{ $course->code }}</td>
             <td>{{ $course->description }}</td>
-            <td>{{ $course->status }}</td>
+{{--            <td>{{ \App\Models\Course::$CourseStatus[$course->status] }}</td>--}}
+            @if($course->status == 1)
+                    <td>{!! $course->course_status_css !!} </td>
+                @elseif($course->status == 0)
+                <td>{!! $course->course_status_css !!} </td>
+                @endif
+{{--                    <td>{{ $course->course_status_css }}</td>--}}
                 <td>
                     {!! Form::open(['route' => ['courses.destroy', $course->id], 'method' => 'delete']) !!}
-                    <div class='btn-group'>
+                    <div class='btn-group' style="width: 70px;">
                         <a href="{{ route('courses.show', [$course->id]) }}" class='btn btn-default btn-xs'><i class="glyphicon glyphicon-eye-open"></i></a>
                         <a href="{{ route('courses.edit', [$course->id]) }}" class='btn btn-default btn-xs'><i class="glyphicon glyphicon-edit"></i></a>
-                        {!! Form::button('<i class="glyphicon glyphicon-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-xs', 'onclick' => "return confirm('Are you sure?')"]) !!}
+                        {!! Form::button('<i class="glyphicon glyphicon-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-xs']) !!}
                     </div>
                     {!! Form::close() !!}
                 </td>
