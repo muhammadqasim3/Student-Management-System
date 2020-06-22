@@ -15,7 +15,7 @@
             <a href="{!! route('classes.index') !!}"><i class="fa fa-leanpub"></i><span>Classes</span></a>
         </li>
         <li class="{{ Request::is('classrooms*') ? 'active' : '' }}">
-            <a href="{!! route('classrooms.index') !!}"><i class="fa fa-edit"></i><span>Classrooms</span></a>
+            <a href="{!! route('classrooms.index') !!}"><i class="fa fa-home"></i><span>Classrooms</span></a>
         </li>
         <li class="{{ Request::is('levels*') ? 'active' : '' }}">
             <a href="{!! route('levels.index') !!}"><i class="fa fa-level-up"></i><span>Levels</span></a>
@@ -33,10 +33,10 @@
             <a href="{!! route('times.index') !!}"><i class="fa fa-edit"></i><span>Times</span></a>
         </li>
         <li class="{{ Request::is('academics*') ? 'active' : '' }}">
-            <a href="{!! route('academics.index') !!}"><i class="fa fa-edit"></i><span>Academics</span></a>
+            <a href="{!! route('academics.index') !!}"><i class="fa fa-university"></i><span>Academics</span></a>
         </li>
         <li class="{{ Request::is('days*') ? 'active' : '' }}">
-            <a href="{!! route('days.index') !!}"><i class="fa fa-edit"></i><span>Days</span></a>
+            <a href="{!! route('days.index') !!}"><i class="fa fa-sun-o"></i><span>Days</span></a>
         </li>
     </ul>
 </li>

@@ -9,7 +9,7 @@
         <tbody>
         @foreach($academics as $academic)
             <tr>
-                <td>{{ $academic->academic_year }}</td>
+                <td>{{  date('Y', strtotime($academic->academic_year)) }}</td>
                 <td>
                     {!! Form::open(['route' => ['academics.destroy', $academic->id], 'method' => 'delete']) !!}
                     <div class='btn-group'>

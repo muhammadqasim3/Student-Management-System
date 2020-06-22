@@ -23,7 +23,18 @@ class Classroom extends Model
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
 
+    const STATUS_RESERVED = 0;
+    const STATUS_AVAILABLE = 1;
 
+    public static $ClassroomStatus = [
+        self::STATUS_RESERVED => "Reserved",
+        self::STATUS_AVAILABLE => "Available"
+    ];
+
+    public static $ClassroomStatusCssColor = [
+        self::STATUS_AVAILABLE => "success",
+        self::STATUS_RESERVED => "danger"
+    ];
 
 
     public $fillable = [
@@ -31,6 +42,10 @@ class Classroom extends Model
         'code',
         'description',
         'status'
+    ];
+
+    protected $appends = [
+        'classroom_status_css'
     ];
 
     /**
@@ -57,6 +72,11 @@ class Classroom extends Model
         'description' => 'required',
         'status' => 'required'
     ];
+
+    public function getClassroomStatusCssAttribute() {
+        return '<span class="label label-' . self::$ClassroomStatusCssColor[$this->status] . '">' . ucwords(str_replace('_', ' ',
+                self::$ClassroomStatus[$this->status])) . '</span>';
+    }
 
 
 }

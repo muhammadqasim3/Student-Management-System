@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CreateClassroomRequest;
 use App\Http\Requests\UpdateClassroomRequest;
+use App\Models\Classroom;
 use App\Repositories\ClassroomRepository;
 use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
@@ -42,7 +43,8 @@ class ClassroomController extends AppBaseController
      */
     public function create()
     {
-        return view('classrooms.create');
+        $status = Classroom::$ClassroomStatus;
+        return view('classrooms.create')->with('status', $status);
     }
 
     /**
@@ -93,14 +95,14 @@ class ClassroomController extends AppBaseController
     public function edit($id)
     {
         $classroom = $this->classroomRepository->find($id);
-
+        $status = Classroom::$ClassroomStatus;
         if (empty($classroom)) {
             Flash::error('Classroom not found');
 
             return redirect(route('classrooms.index'));
         }
 
-        return view('classrooms.edit')->with('classroom', $classroom);
+        return view('classrooms.edit')->with(['classroom' => $classroom, 'status' => $status]);
     }
 
     /**

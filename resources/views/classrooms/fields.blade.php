@@ -19,10 +19,11 @@
 <!-- Status Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('status', 'Status:') !!}
-    <label class="checkbox-inline">
-        {!! Form::hidden('status', 0) !!}
-        {!! Form::checkbox('status', '1', null) !!}
-    </label>
+    {!! Form::select('status',$status ,null, ['class' => 'form-control']) !!}
+{{--    <label class="checkbox-inline">--}}
+{{--        {!! Form::hidden('status', 0) !!}--}}
+{{--        {!! Form::checkbox('status', '1', null) !!}--}}
+{{--    </label>--}}
 </div>
 
 

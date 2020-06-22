@@ -5,7 +5,7 @@
 </div>
 <!-- Date Field -->
 <div class="form-group">
-    {!! Form::label('date', 'Date:') !!}
-    <p>{{ $batch->year }}</p>
+    {!! Form::label('year', 'Year:') !!}
+    <p>{{ date('Y', strtotime($batch->year)) }}</p>
 </div>
 
