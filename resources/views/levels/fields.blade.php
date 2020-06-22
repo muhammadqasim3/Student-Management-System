@@ -1,6 +1,6 @@
 <!-- Course Id Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('course_id', 'Course Id:') !!}
+    {!! Form::label('course_id', 'Course ID:') !!}
     {!! Form::number('course_id', null, ['class' => 'form-control']) !!}
 </div>
 

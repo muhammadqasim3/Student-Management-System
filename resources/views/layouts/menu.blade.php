@@ -12,16 +12,16 @@
 {{--Menu Options--}}
     <ul class="treeview-menu">
         <li class="{{ Request::is('classes*') ? 'active' : '' }}">
-            <a href="{!! route('classes.index') !!}"><i class="fa fa-edit"></i><span>Classes</span></a>
+            <a href="{!! route('classes.index') !!}"><i class="fa fa-leanpub"></i><span>Classes</span></a>
         </li>
         <li class="{{ Request::is('classrooms*') ? 'active' : '' }}">
             <a href="{!! route('classrooms.index') !!}"><i class="fa fa-edit"></i><span>Classrooms</span></a>
         </li>
         <li class="{{ Request::is('levels*') ? 'active' : '' }}">
-            <a href="{!! route('levels.index') !!}"><i class="fa fa-edit"></i><span>Levels</span></a>
+            <a href="{!! route('levels.index') !!}"><i class="fa fa-level-up"></i><span>Levels</span></a>
         </li>
         <li class="{{ Request::is('batches*') ? 'active' : '' }}">
-            <a href="{!! route('batches.index') !!}"><i class="fa fa-edit"></i><span>Batches</span></a>
+            <a href="{!! route('batches.index') !!}"><i class="fa fa-id-badge"></i><span>Batches</span></a>
         </li>
         <li class="{{ Request::is('shifts*') ? 'active' : '' }}">
             <a href="{!! route('shifts.index') !!}"><i class="fa fa-edit"></i><span>Shifts</span></a>
@@ -44,7 +44,7 @@
 {{--General Button--}}
 <li class="treeview">
     <a href="#">
-        <i class="fa fa-dashboard"></i><span>Schedule</span>
+        <i class="fa fa-clock-o"></i><span>Schedule</span>
         <span class="pull-right-container">
             <i class="fa fa-angle-left pull-right"></i>
         </span>

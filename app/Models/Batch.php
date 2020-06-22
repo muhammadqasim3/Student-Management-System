@@ -24,7 +24,8 @@ class Batch extends Model
 
 
     public $fillable = [
-        'name'
+        'name',
+        'year'
     ];
 
     /**
@@ -34,7 +35,8 @@ class Batch extends Model
      */
     protected $casts = [
         'id' => 'integer',
-        'name' => 'string'
+        'name' => 'string',
+        'year' => 'string'
     ];
 
     /**
@@ -43,7 +45,8 @@ class Batch extends Model
      * @var array
      */
     public static $rules = [
-        'name' => 'required'
+        'name' => 'required',
+        'year' => 'required'
     ];
 
 

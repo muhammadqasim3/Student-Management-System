@@ -5,7 +5,6 @@
 {{--        }--}}
 {{--    </style>--}}
 {{--@endpush--}}
-
 <div class="table-responsive" style="">
     <table class="table" id="courses-table">
         <thead>
