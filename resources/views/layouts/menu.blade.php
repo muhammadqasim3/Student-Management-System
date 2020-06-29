@@ -35,6 +35,9 @@
         <li class="{{ Request::is('academics*') ? 'active' : '' }}">
             <a href="{!! route('academics.index') !!}"><i class="fa fa-university"></i><span>Academics</span></a>
         </li>
+        <li class="{{ Request::is('semesters*') ? 'active' : '' }}">
+            <a href="{!! route('semesters.index') !!}"><i class="fa fa-calendar"></i><span>Semesters</span></a>
+        </li>
         <li class="{{ Request::is('days*') ? 'active' : '' }}">
             <a href="{!! route('days.index') !!}"><i class="fa fa-sun-o"></i><span>Days</span></a>
         </li>
