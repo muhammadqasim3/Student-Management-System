@@ -49,3 +49,10 @@
 * Adding custom.css file
     - public/css/custom.css
     - app.js  <link rel="stylesheet" href="{{ asset('/css/custom.css') }}">
+
+* role_user
+    - relations in User & Role Model
+    - sync records in UserController store & update method
+    - make multiselect dropdown or use checkboxes
+
+*

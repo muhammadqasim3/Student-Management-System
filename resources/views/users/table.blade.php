@@ -4,9 +4,8 @@
             <tr>
                 <th>Name</th>
         <th>Email</th>
-        <th>Email Verified At</th>
         <th>Password</th>
-        <th>Remember Token</th>
+        <th>Role</th>
                 <th colspan="3">Action</th>
             </tr>
         </thead>
@@ -15,9 +14,8 @@
             <tr>
                 <td>{{ $user->name }}</td>
             <td>{{ $user->email }}</td>
-            <td>{{ $user->email_verified_at }}</td>
             <td>{{ $user->password }}</td>
-            <td>{{ $user->remember_token }}</td>
+            <td>{{ $user->name }}</td>
                 <td>
                     {!! Form::open(['route' => ['users.destroy', $user->id], 'method' => 'delete']) !!}
                     <div class='btn-group'>

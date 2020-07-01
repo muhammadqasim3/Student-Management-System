@@ -20,7 +20,19 @@ class Role extends Model
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
 
+    const SUPERADMIN = 10;
+    const PRINCIPLE = 20;
+    const TEACHER = 30;
+    const STAFF = 40;
+    const STUDENT = 50;
 
+    public static $ROLES = [
+        self::SUPERADMIN => 'Super Admin',
+        self::PRINCIPLE => 'Principle',
+        self::TEACHER => 'Teacher',
+        self::STAFF => 'Staff',
+        self::STUDENT => 'Student'
+    ];
 
 
     public $fillable = [
@@ -49,5 +61,8 @@ class Role extends Model
         'description' => 'sometimes'
     ];
 
+    public function user(){
+        return $this->belongsToMany(User::class);
+    }
 
 }

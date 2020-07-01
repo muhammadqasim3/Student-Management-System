@@ -16,6 +16,12 @@
     {!! Form::text('email_verified_at', null, ['class' => 'form-control','id'=>'email_verified_at']) !!}
 </div>
 
+<!-- Role Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('roles', 'Role:') !!}
+    {!! Form::select('roles[]', $roles, null, ['class' => 'form-control select2', 'multiple' => 'multiple']) !!}
+</div>
+
 @push('scripts')
     <script type="text/javascript">
         $('#email_verified_at').datetimepicker({

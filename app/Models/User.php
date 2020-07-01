@@ -35,6 +35,10 @@ class User extends Model
         'remember_token'
     ];
 
+    public $with = [
+      'roles'
+    ];
+
     /**
      * The attributes that should be casted to native types.
      *
@@ -60,5 +64,8 @@ class User extends Model
         'password' => 'required'
     ];
 
+    public function roles(){
+        return $this->belongsToMany(Role::class);
+    }
 
 }
