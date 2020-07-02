@@ -118,6 +118,7 @@ class UserController extends AppBaseController
     public function update($id, UpdateUserRequest $request)
     {
         $user = $this->userRepository->find($id);
+        $request['password'] = bcrypt($request['password']);
 //        dd($request->all());
         if (empty($user)) {
             Flash::error('User not found');

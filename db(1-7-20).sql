@@ -139,8 +139,9 @@ CREATE TABLE `class_schedulings` (
   `day_id` int(11) NOT NULL,
   `time_id` int(11) NOT NULL,
   `teacher_id` int(11) NOT NULL,
-  `start_time` time NOT NULL,
-  `end_time` time NOT NULL,
+  `semester_id` int(11) NOT NULL,
+  `start_date` date NOT NULL,
+  `end_date` date NOT NULL,
   `status` tinyint(4) NOT NULL DEFAULT 1,
   `deleted_at` timestamp NULL DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -459,7 +460,7 @@ CREATE TABLE `users` (
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `first_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `last_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `gender` tinyint(4) DEFAULT NULL COMMENT 'male-0, female-1',
+  `gender` tinyint(4) DEFAULT NULL COMMENT 'male-10, female-20',
   `dob` date DEFAULT NULL,
   `phone` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `address` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -473,11 +474,11 @@ CREATE TABLE `users` (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `users_email_unique` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 /*Data for the table `users` */
 
-insert  into `users`(`id`,`name`,`email`,`email_verified_at`,`password`,`remember_token`,`first_name`,`last_name`,`gender`,`dob`,`phone`,`address`,`nationality`,`nic`,`image`,`status`,`date_registered`,`deleted_at`,`created_at`,`updated_at`) values (2,'Muhammad Qasim','qasim@mail.com','2020-06-30 14:45:36','qasim123',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,NULL,NULL,'2020-07-01 07:08:30','2020-07-01 09:47:16');
+insert  into `users`(`id`,`name`,`email`,`email_verified_at`,`password`,`remember_token`,`first_name`,`last_name`,`gender`,`dob`,`phone`,`address`,`nationality`,`nic`,`image`,`status`,`date_registered`,`deleted_at`,`created_at`,`updated_at`) values (2,'Jane','jane@mail.com','2020-06-30 14:45:36','$2y$10$G9XvGsJ4W/m.ls4ZTh6X/e1RNsQOsGh0/ogMa3AvXuJFz2FWeaY/O',NULL,'Jane','Doe',20,'2020-07-10','+92 303 0221051',NULL,NULL,NULL,NULL,1,NULL,NULL,'2020-07-01 07:08:30','2020-07-01 12:12:38'),(4,'Qasim','qasim@mail.com',NULL,'$2y$10$c97wcovFmbJ0E/WgRvHOP.ygUmukAMPtPxnl51Ms8jRvBVZEDyPD.',NULL,'Qasim','Aslam',10,'1998-05-10','+92 303 0221051',NULL,NULL,NULL,NULL,1,NULL,NULL,'2020-07-01 10:47:32','2020-07-01 12:13:26');
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

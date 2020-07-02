@@ -24,6 +24,21 @@ class User extends Model
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
 
+    const MALE = 10;
+    const FEMALE = 20;
+
+    public static $GENDER = [
+        self::MALE => 'Male',
+        self::FEMALE => 'Female'
+    ];
+
+    const ACTIVE = 1;
+    const INACTIVE = 0;
+
+    public static $USER_STATUS = [
+        self::ACTIVE => 'Active',
+        self::INACTIVE => 'Inactive'
+    ];
 
 
 
@@ -32,7 +47,18 @@ class User extends Model
         'email',
         'email_verified_at',
         'password',
-        'remember_token'
+        'remember_token',
+        'first_name',
+        'last_name',
+        'gender',
+        'dob',
+        'phone',
+        'address',
+        'nationality',
+        'nic',
+        'image',
+        'status',
+        'date_registered',
     ];
 
     public $with = [
@@ -50,7 +76,17 @@ class User extends Model
         'email' => 'string',
         'email_verified_at' => 'datetime',
         'password' => 'string',
-        'remember_token' => 'string'
+        'remember_token' => 'string',
+        'first_name' => 'string',
+        'last_name' => 'string',
+        'gender' => 'integer',
+        'dob' => 'date',
+        'phone' => 'string',
+        'address' => 'text',
+        'nic' => 'string',
+        'image' => 'string',
+        'status' => 'integer',
+        'date_registered' => 'date',
     ];
 
     /**
@@ -61,11 +97,24 @@ class User extends Model
     public static $rules = [
         'name' => 'required',
         'email' => 'required',
-        'password' => 'required'
+        'first_name' => 'required',
+        'last_name' => 'sometimes',
+        'gender' => 'required',
+        'dob' => 'sometimes',
+        'phone' => 'required',
+        'nic' => 'sometimes',
+        'image' => 'sometimes',
+        'status' => 'required',
+        'date_registered' => 'sometimes',
     ];
 
     public function roles(){
         return $this->belongsToMany(Role::class);
+    }
+
+    // dynamic attribute for showing multiple roles
+    public function getRolesCsvAttribute(){
+        return implode(",", $this->roles->pluck('name')->all());
     }
 
 }
