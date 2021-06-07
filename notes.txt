@@ -2,6 +2,7 @@
 
 * Infyom Generator with AdminLTE theme
     - https://labs.infyom.com/laravelgenerator/docs/7.0/publish-layout
+ 
 
 * Migrations
     - php artisan make:migration create_admissions_table --create=admissions
